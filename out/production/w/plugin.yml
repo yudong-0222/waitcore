@@ -1,0 +1,56 @@
+name: WaitCore
+version: 1.8.8-ASHS.NCTU
+main: mc.waitpvp.settings.main
+author: WAIT Network Developments > YuDong
+description: §c§l[WAIT NETWORK] §B§L專屬核心插件 §4§L蒼蠅fly
+commands:
+  waitreport:
+    description: 開發中! 使用/report代替!
+    aliases:
+      - wreport
+      - waitreports
+      - waitreporthack
+      - wdr
+      - wtfreport
+      - wtfhac
+  howtoplay:
+    description: 幹你娘怎麼玩
+    aliases:
+      - htp
+      - howplay
+  plugins:
+    description: KID
+
+  gmc:
+    description: 切換創造
+
+  gms:
+    description: 切換生存
+
+  gma:
+    description: 切換冒險
+
+  eatgigi:
+    description: 吃ㄐㄐ模式，
+
+  waitpvp:
+    description: main-command
+    aliases:
+      - wait
+      - waitaliases
+      - waitcore
+      - core
+      - version
+      - ver
+      - cool
+      - "?"
+      - play
+
+  mus:
+    description: test command for DCJH
+
+  gg:
+    description: coming sooon
+
+  resetname:
+    description: nothing just reset nickname. like /unnick
