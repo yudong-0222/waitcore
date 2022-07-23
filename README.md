@@ -1,8 +1,14 @@
-# WaitParticles
-## 專屬wait network 插件 - WaitParticles
-### What is WaitParticles?
-**特效與投擲物品軌跡**
-+ ***版本: 1.8.8ASHU NCTU***
-+ ***作者:Wait Development -> YuDong***
+# WaitCore
+## 專屬wait network 插件 - WaitCore
 - - -
-吃我ㄐㄐ
+### What is WaitCore?
+**Essential command / aliases / Practice Plugin API hoook...etc**
++ ***版本: 1.8.8ASHU NCTU***
++ ***作者:Wait Development -> YuDong***  
+  
+
++ *WaitEssential ==WaitCore*
+
+- - -
+
+

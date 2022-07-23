@@ -1,7 +1,7 @@
 name: WaitCore
 version: 1.8.8-ASHS.NCTU
 main: mc.waitpvp.settings.main
-author: WAIT Network Developments > YuDong
+author: WaitNetwork
 description: §c§l[WAIT NETWORK] §B§L專屬核心插件 §4§L蒼蠅fly
 commands:
   waitreport:
