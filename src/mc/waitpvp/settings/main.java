@@ -16,7 +16,6 @@ import org.bukkit.scheduler.BukkitScheduler;
 
 public class main extends JavaPlugin implements CommandExecutor {
     private static main plugin;
-    private PluginDescriptionFile plugininfo;
     public String ShitPrefix;
     public final String DebugPrefix = ChatColor.AQUA + "[WaitCore] ";
     FileConfiguration configFile = this.getConfig();
@@ -27,14 +26,16 @@ public class main extends JavaPlugin implements CommandExecutor {
     }
 
     public void onEnable() {
-        if (!plugininfo.getName().equals("WaitCore")) {
-            if(!plugininfo.getAuthors().equals("WaitNetwork")) {
+        if (!getDescription().getName().equals("WaitCore")) {
+            if(!getDescription().getAuthors().equals("WaitNetwork")) {
                 Bukkit.getPluginManager().disablePlugin(this);
             }
         }
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + plugininfo.getName() + " §A啟用成功!");
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §B版本: " + plugininfo.getVersion());
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §b作者: " + plugininfo.getAuthors() + " §l雨冬");
+            Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
+            Bukkit.getConsoleSender().sendMessage(DebugPrefix  + "" + ChatColor.GOLD  + getDescription().getName() + " §A啟用成功!");
+            Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §B版本: " + getDescription().getVersion());
+            Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §b作者: " + getDescription().getAuthors() + " §l雨冬");
+            Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
             this.registerCommands();
             this.getServer().getPluginManager().registerEvents(new tmt(), this);
             this.getServer().getPluginManager().registerEvents(new fighendevent(), this);
@@ -50,7 +51,7 @@ public class main extends JavaPlugin implements CommandExecutor {
         @Override
         public void onDisable () {
             Bukkit.getConsoleSender().sendMessage(DebugPrefix + ChatColor.RED + "插件已關閉");
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix + ChatColor.RED + "版本 " + plugininfo.getVersion());
+            Bukkit.getConsoleSender().sendMessage(DebugPrefix + ChatColor.RED + "版本 " + getDescription().getVersion());
             saveConfig();
         }
     public void registerCommands() {
