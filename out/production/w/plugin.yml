@@ -20,19 +20,16 @@ commands:
       - howplay
   plugins:
     description: KID
-
+    aliases:
+      - pl
   gmc:
     description: 切換創造
-
   gms:
     description: 切換生存
-
   gma:
     description: 切換冒險
-
   eatgigi:
     description: 吃ㄐㄐ模式，
-
   waitpvp:
     description: main-command
     aliases:
@@ -48,9 +45,7 @@ commands:
 
   mus:
     description: test command for DCJH
-
   gg:
     description: coming sooon
-
   resetname:
     description: nothing just reset nickname. like /unnick
