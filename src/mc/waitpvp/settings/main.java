@@ -1,19 +1,14 @@
 package mc.waitpvp.settings;
 
-import mc.waitpvp.settings.color.ConsoleColors;
 import mc.waitpvp.settings.event.death;
 import mc.waitpvp.settings.event.fighendevent;
-import mc.waitpvp.settings.event.pluginevent;
 import mc.waitpvp.settings.event.tmt;
 import mc.waitpvp.settings.menu.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitScheduler;
 
 public class main extends JavaPlugin implements CommandExecutor {
     private static main plugin;
@@ -63,14 +58,12 @@ public class main extends JavaPlugin implements CommandExecutor {
         this.getCommand("gmc").setExecutor(new gmc(this));
         this.getCommand("gms").setExecutor(new gms(this));
         this.getCommand("howtoplay").setExecutor(new howtoplay(this));
-        this.getCommand("plugins").setExecutor(new plugins(this));
         this.getCommand("waitpvp").setExecutor(new waitpvp(this));
         this.getCommand("resetname").setExecutor(new resetname(this));
     }
     public void regEvents(){
         this.getServer().getPluginManager().registerEvents(new tmt(), this);
         this.getServer().getPluginManager().registerEvents(new fighendevent(), this);
-        this.getServer().getPluginManager().registerEvents(new pluginevent(), this);
         this.getServer().getPluginManager().registerEvents(new death(), this);
     }
 }
