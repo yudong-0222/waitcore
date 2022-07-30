@@ -1,6 +1,7 @@
 package mc.waitpvp.settings;
 
 import mc.waitpvp.settings.color.ConsoleColors;
+import mc.waitpvp.settings.event.death;
 import mc.waitpvp.settings.event.fighendevent;
 import mc.waitpvp.settings.event.pluginevent;
 import mc.waitpvp.settings.event.tmt;
@@ -37,10 +38,9 @@ public class main extends JavaPlugin implements CommandExecutor {
             Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §b作者: " + getDescription().getAuthors() + " §l雨冬");
             Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
             this.registerCommands();
-            this.getServer().getPluginManager().registerEvents(new tmt(), this);
-            this.getServer().getPluginManager().registerEvents(new fighendevent(), this);
-            this.getServer().getPluginManager().registerEvents(new pluginevent(), this);
             //上面註冊而已
+        this.regEvents();
+        /* 註冊事件 ouo*/
             this.saveDefaultConfig();
             this.getConfig();
             configFile.addDefault("Wait Network only", true);
@@ -66,6 +66,12 @@ public class main extends JavaPlugin implements CommandExecutor {
         this.getCommand("plugins").setExecutor(new plugins(this));
         this.getCommand("waitpvp").setExecutor(new waitpvp(this));
         this.getCommand("resetname").setExecutor(new resetname(this));
+    }
+    public void regEvents(){
+        this.getServer().getPluginManager().registerEvents(new tmt(), this);
+        this.getServer().getPluginManager().registerEvents(new fighendevent(), this);
+        this.getServer().getPluginManager().registerEvents(new pluginevent(), this);
+        this.getServer().getPluginManager().registerEvents(new death(), this);
     }
 }
 
