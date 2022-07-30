@@ -18,10 +18,6 @@ commands:
     aliases:
       - htp
       - howplay
-  plugins:
-    description: KID
-    aliases:
-      - pl
   gmc:
     description: 切換創造
   gms:
@@ -41,8 +37,6 @@ commands:
       - ver
       - cool
       - "?"
-      - play
-
   mus:
     description: test command for DCJH
   gg:
