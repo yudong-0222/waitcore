@@ -50,16 +50,16 @@ public class main extends JavaPlugin implements CommandExecutor {
             saveConfig();
         }
     public void registerCommands() {
-        this.getCommand("mus").setExecutor(new mus(this));
-        this.getCommand("gg").setExecutor(new gg(this));
-        this.getCommand("gma").setExecutor(new gma(this));
-        this.getCommand("waitreport").setExecutor(new report(this));
-        this.getCommand("eatgigi").setExecutor(new eatgigi(this));
-        this.getCommand("gmc").setExecutor(new gmc(this));
-        this.getCommand("gms").setExecutor(new gms(this));
-        this.getCommand("howtoplay").setExecutor(new howtoplay(this));
-        this.getCommand("waitpvp").setExecutor(new waitpvp(this));
-        this.getCommand("resetname").setExecutor(new resetname(this));
+        getCommand("mus").setExecutor(new mus(this));
+        getCommand("gg").setExecutor(new gg(this));
+        getCommand("gma").setExecutor(new gma(this));
+        getCommand("waitreport").setExecutor(new report(this));
+        getCommand("eatgigi").setExecutor(new eatgigi(this));
+        getCommand("gmc").setExecutor(new gmc(this));
+        getCommand("gms").setExecutor(new gms(this));
+        getCommand("howtoplay").setExecutor(new howtoplay(this));
+        getCommand("waitpvp").setExecutor(new waitpvp(this));
+        getCommand("resetname").setExecutor(new resetname(this));
     }
     public void regEvents(){
         this.getServer().getPluginManager().registerEvents(new tmt(), this);
