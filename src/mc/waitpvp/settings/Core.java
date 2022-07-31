@@ -1,6 +1,5 @@
 package mc.waitpvp.settings;
 
-import mc.waitpvp.settings.event.death;
 import mc.waitpvp.settings.event.fighendevent;
 import mc.waitpvp.settings.event.tmt;
 import mc.waitpvp.settings.menu.*;
@@ -10,14 +9,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class main extends JavaPlugin implements CommandExecutor {
-    private static main plugin;
+public class Core extends JavaPlugin implements CommandExecutor {
+    private static Core plugin;
     public String ShitPrefix;
     public final String DebugPrefix = ChatColor.AQUA + "[WaitCore] ";
     FileConfiguration configFile = this.getConfig();
 
-    public main() {
-        main.plugin = this;
+    public Core() {
+        Core.plugin = this;
         this.ShitPrefix = ChatColor.AQUA + "[WaitCore] ";;
     }
 
@@ -63,8 +62,7 @@ public class main extends JavaPlugin implements CommandExecutor {
     }
     public void regEvents(){
         this.getServer().getPluginManager().registerEvents(new tmt(), this);
-        this.getServer().getPluginManager().registerEvents(new fighendevent(), this);
-        this.getServer().getPluginManager().registerEvents(new death(), this);
+        this.getServer().getPluginManager().registerEvents(new fighendevent(this), this);
     }
 }
 
