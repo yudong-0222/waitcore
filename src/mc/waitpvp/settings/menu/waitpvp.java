@@ -1,12 +1,16 @@
 package mc.waitpvp.settings.menu;
 
-import mc.waitpvp.settings.main;
+import mc.waitpvp.settings.Core;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class waitpvp implements CommandExecutor {
-    public waitpvp(main main) {
+
+    private Core core;
+    public waitpvp(Core cc) {
+        this.core = cc;
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -38,6 +42,18 @@ public class waitpvp implements CommandExecutor {
             sender.sendMessage("  §c/waitcore:resetname §4狗屎重製名字");
             sender.sendMessage("§l───────§l[§dWAIT §bCore§f§l]§l───────");
             return true;
+        }
+        if(args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("rl")) {
+            if(sender.hasPermission("waitpvp.reload")){
+                //有權限 執行這
+                    core.reloadConfig();
+                    sender.sendMessage(core.DebugPrefix + "§a插件已經重啟完畢");
+                    sender.sendMessage(core.DebugPrefix + "§c不推薦使用/waitcore reload 可能導致部分資料受損。");
+                    return true;
+            }
+            //沒有權限。
+                sender.sendMessage(core.DebugPrefix + "§c" + core.getConfig().getString("message.noperm"));
+                    return true;
         }
         return false;
         }

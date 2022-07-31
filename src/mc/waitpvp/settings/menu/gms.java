@@ -1,6 +1,6 @@
 package mc.waitpvp.settings.menu;
 
-import mc.waitpvp.settings.main;
+import mc.waitpvp.settings.Core;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 public class gms implements CommandExecutor {
 
 
-    public gms(main main) {
+    public gms(Core Core) {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

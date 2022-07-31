@@ -1,6 +1,6 @@
 package mc.waitpvp.settings.menu;
 
-import mc.waitpvp.settings.main;
+import mc.waitpvp.settings.Core;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class gma implements CommandExecutor {
 
-    public gma(main main) {
+    public gma(Core Core) {
     }
 
     @Override

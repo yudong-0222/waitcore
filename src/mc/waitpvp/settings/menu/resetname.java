@@ -1,6 +1,6 @@
 package mc.waitpvp.settings.menu;
 
-import mc.waitpvp.settings.main;
+import mc.waitpvp.settings.Core;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class resetname implements CommandExecutor {
 
-    public resetname(main main) {
+    public resetname(Core Core) {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

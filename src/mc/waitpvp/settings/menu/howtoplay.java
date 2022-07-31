@@ -1,6 +1,6 @@
 package mc.waitpvp.settings.menu;
 
-import mc.waitpvp.settings.main;
+import mc.waitpvp.settings.Core;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 public class howtoplay implements CommandExecutor {
 
 
-    public howtoplay(main main) {
+    public howtoplay(Core Core) {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
