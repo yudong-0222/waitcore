@@ -1,7 +1,7 @@
 package mc.waitpvp.settings;
 
 import mc.waitpvp.settings.event.fighendevent;
-import mc.waitpvp.settings.event.gui;
+import mc.waitpvp.settings.event.fightstartevent;
 import mc.waitpvp.settings.event.tmt;
 import mc.waitpvp.settings.menu.*;
 import org.bukkit.Bukkit;
@@ -64,7 +64,7 @@ public class Core extends JavaPlugin implements CommandExecutor {
     public void regEvents(){
         this.getServer().getPluginManager().registerEvents(new tmt(), this);
         this.getServer().getPluginManager().registerEvents(new fighendevent(this), this);
-        this.getServer().getPluginManager().registerEvents(new gui(this), this);
+        this.getServer().getPluginManager().registerEvents(new fightstartevent(this), this);
     }
 }
 

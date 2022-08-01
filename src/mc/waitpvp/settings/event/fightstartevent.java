@@ -2,26 +2,18 @@ package mc.waitpvp.settings.event;
 
 import ga.strikepractice.StrikePractice;
 import ga.strikepractice.api.StrikePracticeAPI;
-import ga.strikepractice.api.a;
-import ga.strikepractice.battlekit.BattleKit;
 import ga.strikepractice.events.DuelStartEvent;
-import ga.strikepractice.events.FightStartEvent;
-import ga.strikepractice.fights.Fight;
-import ga.strikepractice.fights.queue.QueueRunnable;
 import mc.waitpvp.settings.Core;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-import java.net.http.WebSocket;
-
-public class gui implements Listener {
+public class fightstartevent implements Listener {
 public Core core;
 public int count = 4;
 public  int Task;
-public gui (Core core) {
+public fightstartevent(Core core) {
     this.core = core;
 }
 
