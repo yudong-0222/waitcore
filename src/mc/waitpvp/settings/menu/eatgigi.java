@@ -18,7 +18,6 @@ public class eatgigi implements Listener, CommandExecutor {
         }
         Player p = (Player) sender;
         p.sendMessage("§c吃 ㄐ ㄐ 吃 ㄐ ㄐ");
-        p.setDisplayName(p.getName() + " " +  "§4§lㄐㄐ天王");
         p.sendTitle("§4雞雞天王已上線", "§7§l久候多時...");
         return true;
     }

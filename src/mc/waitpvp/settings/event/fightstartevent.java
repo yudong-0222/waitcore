@@ -29,8 +29,7 @@ public class fightstartevent implements Listener {
             p1.sendTitle("§d§l戰鬥開始了!", "§fGood Luck !");
             p2.sendTitle("§d§l戰鬥開始了!", "§fGood Luck !");
             return;
-        } else if (!d.getKit().isNoDeathCountdown()) {
-
+        } else if (!d.getKit().isNoDeathCountdown() || !d.getKit().isStickSpawn()) {
             if (count != -1) {
                 Task = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(core, () -> {
                     switch (count) {
