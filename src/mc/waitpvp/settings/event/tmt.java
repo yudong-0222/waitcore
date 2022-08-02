@@ -29,6 +29,5 @@ public class tmt implements Listener {
         e.getBlock().setType(Material.AIR , true);//在玩家放下TNT的地方 設置成空氣
         TNTPrimed tntPrimed = e.getBlock().getWorld().spawn(e.getBlock().getLocation(), TNTPrimed.class); //接著產生點燃的TNT
         tntPrimed.setFuseTicks(10); //設置爆炸時間 (10 TICKS) 每20TICKS 是 1秒 這邊是0.5
-
         }
     }
