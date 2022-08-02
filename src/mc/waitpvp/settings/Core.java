@@ -11,15 +11,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Core extends JavaPlugin implements CommandExecutor {
-    private static Core plugin;
     public String ShitPrefix;
     public final String DebugPrefix = ChatColor.AQUA + "[WaitCore] ";
     FileConfiguration configFile = this.getConfig();
-
-    public Core() {
-        Core.plugin = this;
-        this.ShitPrefix = ChatColor.AQUA + "[WaitCore] ";;
-    }
+    private  Core plugin;
 
     public void onEnable() {
         if (!getDescription().getName().equals("WaitCore")) {
@@ -27,20 +22,22 @@ public class Core extends JavaPlugin implements CommandExecutor {
                 Bukkit.getPluginManager().disablePlugin(this);
             }
         }
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix  + "" + ChatColor.GOLD  + getDescription().getName() + " §A啟用成功!");
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §B版本: " + getDescription().getVersion());
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §b作者: " + getDescription().getAuthors() + " §l雨冬");
-            Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
-            this.registerCommands();
-            //上面註冊而已
+        this.ShitPrefix = ChatColor.AQUA + "[WaitCore] ";;
+        this.plugin = plugin;
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix  + "" + ChatColor.GOLD  + getDescription().getName() + " §A啟用成功!");
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §B版本: " + getDescription().getVersion());
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §b作者: " + getDescription().getAuthors() + " §l雨冬");
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
+        this.registerCommands();
+        //上面註冊而已
         this.regEvents();
         /* 註冊事件 ouo*/
-            this.saveDefaultConfig();
-            this.getConfig();
-            configFile.addDefault("Wait Network only", true);
-            configFile.options().copyDefaults(true);
-            saveConfig();
+        this.saveDefaultConfig();
+        this.getConfig();
+        configFile.addDefault("Wait Network only", true);
+        configFile.options().copyDefaults(true);
+        saveConfig();
             //load files config shit
     }
         @Override
@@ -51,7 +48,7 @@ public class Core extends JavaPlugin implements CommandExecutor {
         }
     public void registerCommands() {
         getCommand("mus").setExecutor(new mus(this));
-        getCommand("gg").setExecutor(new gg(this));
+        getCommand("gg").setExecutor(new gg());
         getCommand("gma").setExecutor(new gma(this));
         getCommand("waitreport").setExecutor(new report(this));
         getCommand("eatgigi").setExecutor(new eatgigi(this));
@@ -62,7 +59,7 @@ public class Core extends JavaPlugin implements CommandExecutor {
         getCommand("resetname").setExecutor(new resetname(this));
     }
     public void regEvents(){
-        this.getServer().getPluginManager().registerEvents(new tmt(), this);
+        this.getServer().getPluginManager().registerEvents(new tmt(this), this);
         this.getServer().getPluginManager().registerEvents(new fighendevent(this), this);
         this.getServer().getPluginManager().registerEvents(new fightstartevent(this), this);
     }
