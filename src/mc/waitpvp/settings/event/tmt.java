@@ -1,16 +1,21 @@
 package mc.waitpvp.settings.event;
 
-import ga.strikepractice.utils.B;
 import mc.waitpvp.settings.Core;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.event.entity.EntityDamageByBlockEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.ExplosionPrimeEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitTask;
 
 public class tmt implements Listener {
@@ -23,11 +28,18 @@ public class tmt implements Listener {
     @EventHandler
     public void tnt(BlockPlaceEvent e) {
         Block block = e.getBlock();
-        if (!block.getType().equals(Material.TNT)){
+        ItemStack im = e.getPlayer().getItemInHand();
+        if (!block.getType().equals(Material.TNT) && !im.hasItemMeta()){
             return;
     }
-        e.getBlock().setType(Material.AIR , true);//在玩家放下TNT的地方 設置成空氣
-        TNTPrimed tntPrimed = e.getBlock().getWorld().spawn(e.getBlock().getLocation(), TNTPrimed.class); //接著產生點燃的TNT
-        tntPrimed.setFuseTicks(10); //設置爆炸時間 (10 TICKS) 每20TICKS 是 1秒 這邊是0.5
+            e.getBlock().setType(Material.AIR , true);//在玩家放下TNT的地方 設置成空氣
+            TNTPrimed tntPrimed = e.getBlock().getWorld().spawn(e.getBlock().getLocation(), TNTPrimed.class);//接著產生點燃的TNT - >自動爆炸
+            tntPrimed.setFuseTicks(10);
+    }
+    @EventHandler
+    public void ttt(ExplosionPrimeEvent e) {
+        if(e.getEntity().getType().equals(EntityType.PRIMED_TNT)) {
+            e.setRadius((float) plugin.getConfig().getDouble("radius"));
         }
     }
+}
