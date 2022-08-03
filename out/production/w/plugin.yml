@@ -43,3 +43,4 @@ commands:
     description: coming sooon
   resetname:
     description: nothing just reset nickname. like /unnick
+  radius:

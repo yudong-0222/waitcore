@@ -1,4 +1,4 @@
-package mc.waitpvp.settings.menu;
+package mc.waitpvp.settings.cmds;
 
 import mc.waitpvp.settings.Core;
 import org.bukkit.GameMode;

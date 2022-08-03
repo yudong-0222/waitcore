@@ -1,4 +1,4 @@
-package mc.waitpvp.settings.menu;
+package mc.waitpvp.settings.cmds;
 
 import mc.waitpvp.settings.Core;
 import org.bukkit.ChatColor;
@@ -15,7 +15,8 @@ public class howtoplay implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
             sender.sendMessage("§e§m-------------§9[§DWAIT NETWORK§9]§e§m-------------");
             sender.sendMessage("§e你好 ！ §b" + sender.getName());
-            sender.sendMessage(ChatColor.YELLOW + "可以使用" + ChatColor.GREEN + "/party create 來創建隊伍並邀請朋友加入喔~");
+            sender.sendMessage(ChatColor.YELLOW + "可以使用" + ChatColor.GREEN + "/party create 來創建隊伍並邀請朋友加入");
+            sender.sendMessage(ChatColor.YELLOW + "或者使用" + ChatColor.GREEN + "§f鐵劍 §a選擇模式加入隊列!");
             sender.sendMessage(ChatColor.RED + "加入Discord！" + "§ddsc.gg/waitpvp" );
             sender.sendMessage("§e§m-------------§9[§DWAIT NETWORK§9]§e§m-------------");
             return true;

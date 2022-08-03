@@ -1,4 +1,4 @@
-package mc.waitpvp.settings.menu;
+package mc.waitpvp.settings.cmds;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -3,4 +3,4 @@ message:
   lavakill: '燒死了!' # eG. <loser> 被 <winner> 燒死了
   boom: '炸開了' # eg. <死者> 炸裂了
   noperm: '你沒有權限這麼做'
-radius: 10.5   #
+radius: 2.5   #

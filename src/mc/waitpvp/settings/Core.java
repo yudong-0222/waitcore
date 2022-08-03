@@ -1,38 +1,28 @@
 package mc.waitpvp.settings;
 
-import com.google.common.io.Files;
 import mc.waitpvp.settings.event.fighendevent;
 import mc.waitpvp.settings.event.fightstartevent;
 import mc.waitpvp.settings.event.tmt;
-import mc.waitpvp.settings.menu.*;
+import mc.waitpvp.settings.cmds.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
 
 
 public class Core extends JavaPlugin implements CommandExecutor {
-    public String ShitPrefix;
     public final String DebugPrefix = ChatColor.AQUA + "[WaitCore] ";
-    FileConfiguration configFile = this.getConfig();
     private  Core plugin;
+
     public void onEnable() {
         if (!getDescription().getName().equals("WaitCore")) {
             if(!getDescription().getAuthors().equals("WaitNetwork")) {
                 Bukkit.getPluginManager().disablePlugin(this);
             }
         }
-        getConfig().options().copyDefaults();
-        saveDefaultConfig();
-        sendEnable();
-        this.ShitPrefix = ChatColor.AQUA + "[WaitCore] ";;
+        this.getConfig().options().copyDefaults();
+        this.saveDefaultConfig();
+        this.sendEnable();
         this.plugin = plugin;
         this.registerCommands();
         //上面註冊而已
@@ -42,10 +32,8 @@ public class Core extends JavaPlugin implements CommandExecutor {
     }
         @Override
         public void onDisable () {
-            this.saveConfig();
             Bukkit.getConsoleSender().sendMessage(DebugPrefix + ChatColor.RED + "插件已關閉");
             Bukkit.getConsoleSender().sendMessage(DebugPrefix + ChatColor.RED + "版本 " + getDescription().getVersion());
-            saveConfig();
         }
     public void registerCommands() {
         getCommand("mus").setExecutor(new mus(this));
