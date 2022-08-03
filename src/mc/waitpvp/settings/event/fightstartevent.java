@@ -25,11 +25,11 @@ public class fightstartevent implements Listener {
         Player p1 = d.getPlayer1();
         Player p2 = d.getPlayer2();
         String kit = d.getKit().getName();
-        if (d.getKit().isNoDeathCountdown()) { //battlekit deathcountdown false才有
-            p1.sendTitle("§d§l戰鬥開始了!", "§fGood Luck !");
-            p2.sendTitle("§d§l戰鬥開始了!", "§fGood Luck !");
+        if (d.getKit().isNoDeathCountdown() && !d.getKit().isStickSpawn()) { //battlekit deathcountdown false 並且要沒有Stickspawn [因為會到署]
+            p1.sendTitle("§d§l戰鬥開始了!", "§fGood Luck!");
+            p2.sendTitle("§d§l戰鬥開始了!", "§fGood Luck!");
             return;
-        } else if (!d.getKit().isNoDeathCountdown() || !d.getKit().isStickSpawn()) {
+        } else if (!d.getKit().isNoDeathCountdown() /*deathcountdown false 這邊在否定一次 變成 deathcountdown true*/ || !d.getKit().isStickSpawn() || d.getKit().isStickSpawn())  {
             if (count != -1) {
                 Task = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(core, () -> {
                     switch (count) {

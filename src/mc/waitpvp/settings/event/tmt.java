@@ -29,7 +29,7 @@ public class tmt implements Listener {
     public void tnt(BlockPlaceEvent e) {
         Block block = e.getBlock();
         ItemStack im = e.getPlayer().getItemInHand();
-        if (!block.getType().equals(Material.TNT) && !im.hasItemMeta()){
+        if (!block.getType().equals(Material.TNT) && !im.getItemMeta().getDisplayName().equalsIgnoreCase("a")){
             return;
     }
             e.getBlock().setType(Material.AIR , true);//在玩家放下TNT的地方 設置成空氣
