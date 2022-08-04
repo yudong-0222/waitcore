@@ -24,7 +24,7 @@ public class fightstartevent implements Listener {
     public void gui(DuelStartEvent d) {
         Player p1 = d.getPlayer1();
         Player p2 = d.getPlayer2();
-        String kit = d.getKit().getName();
+        String kit = d.getKit().getFancyName();
         if (d.getKit().isNoDeathCountdown() && !d.getKit().isStickSpawn()) { //battlekit deathcountdown false 並且要沒有Stickspawn [因為會到署]
             p1.sendTitle("§d§l戰鬥開始了!", "§fGood Luck!");
             p2.sendTitle("§d§l戰鬥開始了!", "§fGood Luck!");
