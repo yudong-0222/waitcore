@@ -13,7 +13,7 @@ public class eatgigi implements Listener, CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender.hasPermission("waitpvp.eatgigi"))) {
-            sender.sendMessage("§c§l沒有權限吃ㄐㄐ！ 嘗試訂閱放火？");
+            sender.sendMessage("§c§l沒有權限吃ㄐㄐ！ 再嘗試一次?？");
             return false;
         }
         Player p = (Player) sender;

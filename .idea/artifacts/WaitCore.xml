@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="WaitCore">
-    <output-path>E:/wait 2/1.2 - 複製/plugins</output-path>
+    <output-path>E:/wait 2/.Wait_Plugin_Exporty</output-path>
     <root id="archive" name="WaitCore.jar">
       <element id="module-output" name="w" />
       <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />

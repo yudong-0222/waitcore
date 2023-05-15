@@ -4,3 +4,4 @@ message:
   boom: '炸開了' # eg. <死者> 炸裂了
   noperm: '你沒有權限這麼做'
 radius: 2.5   #
+
