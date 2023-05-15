@@ -48,15 +48,21 @@ public class Core extends JavaPlugin implements CommandExecutor {
         getCommand("resetname").setExecutor(new resetname(this));
     }
     public void regEvents(){
-        this.getServer().getPluginManager().registerEvents(new tmt(this), this);
-        this.getServer().getPluginManager().registerEvents(new fighendevent(this), this);
-        this.getServer().getPluginManager().registerEvents(new fightstartevent(this), this);
+        if ((getServer().getPluginManager().getPlugin("StrikePractice")) != null) {
+            this.getServer().getPluginManager().registerEvents(new tmt(this), this);
+            this.getServer().getPluginManager().registerEvents(new fighendevent(this), this);
+            this.getServer().getPluginManager().registerEvents(new fightstartevent(this), this);
+            Bukkit.getConsoleSender().sendMessage(DebugPrefix + ChatColor.GREEN + "已載入" + ChatColor.YELLOW + "StrikePractice "+ ChatColor.GREEN + "擴充功能");
+        } else {
+            Bukkit.getConsoleSender().sendMessage((DebugPrefix + ChatColor.RED + "已經將" + ChatColor.GREEN + "StrikePractice"+ ChatColor.RED + "擴充關閉"));
+        }
+
     }
     public void sendEnable(){
         Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
-        Bukkit.getConsoleSender().sendMessage(DebugPrefix  + "" + ChatColor.GOLD  + getDescription().getName() + " §A啟用成功!");
-        Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §B版本: " + getDescription().getVersion());
-        Bukkit.getConsoleSender().sendMessage(DebugPrefix    + " §b作者: " + getDescription().getAuthors() + " §l雨冬");
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + getDescription().getName() + " §A啟用成功!");
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix  + " §B版本: " + getDescription().getVersion());
+        Bukkit.getConsoleSender().sendMessage(DebugPrefix  + " §b作者: " + getDescription().getAuthors());
         Bukkit.getConsoleSender().sendMessage(DebugPrefix  + ChatColor.GOLD  + " ───────────────────────────");
     }
 }
