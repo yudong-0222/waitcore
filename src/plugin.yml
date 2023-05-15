@@ -1,8 +1,8 @@
 name: WaitCore
-version: 1.8.8-ASHS.NTUN
+version: 1.8.9_01
 main: mc.waitpvp.settings.Core
-author: WaitNetwork
-description: §c§l[WAIT NETWORK] §B§L專屬核心插件 §4§L蒼蠅fly
+author: YuDong
+description: §c§l[WAIT NETWORK] §B§L專屬核心插件 §a使用/?獲取更多!
 commands:
   waitreport:
     description: 開發中! 使用/report代替!
