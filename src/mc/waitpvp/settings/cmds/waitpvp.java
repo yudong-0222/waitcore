@@ -17,7 +17,7 @@ public class waitpvp implements CommandExecutor {
             sender.sendMessage("§l───────§l[§dWAIT §bNetwork§f§l]§l───────");
             sender.sendMessage("§r                                                                                                            ");
             sender.sendMessage("§eAuthor: WAIT NETWORK Development > YuDong");
-            sender.sendMessage("§cversion: 1.838.89");
+            sender.sendMessage("§cversion: " + core.getDescription().getVersion());
             sender.sendMessage("§dLast Update: 22/7/22");
             sender.sendMessage("§B描述: 專屬於WAIT NETWORK 核心，修補Practice插件不足, 添加自定義選單, ");
             sender.sendMessage("§c使用/waitcore help  §a獲取指令列表");
