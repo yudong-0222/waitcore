@@ -18,7 +18,6 @@ public class fighendevent implements Listener {
     public fighendevent(Core cc) {
         this.core = cc;
     }
-
     @EventHandler
     public void End(DuelEndEvent e) {
         Player p = e.getWinner();
