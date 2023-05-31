@@ -15,19 +15,16 @@ public class waitpvp implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(args.length ==0) {
             sender.sendMessage("§l───────§l[§dWAIT §bNetwork§f§l]§l───────");
-            sender.sendMessage("§r                                                                                                            ");
-            sender.sendMessage("§eAuthor: WAIT NETWORK Development > YuDong");
-            sender.sendMessage("§cversion: " + core.getDescription().getVersion());
-            sender.sendMessage("§dLast Update: 22/7/22");
-            sender.sendMessage("§B描述: 專屬於WAIT NETWORK 核心，修補Practice插件不足, 添加自定義選單, ");
+            sender.sendMessage("§eAuthor: YuDong");
+            sender.sendMessage("§cVersion: " + core.getDescription().getVersion());
+            sender.sendMessage("§dLast Update: 31/5/23");
+            sender.sendMessage("§B描述: 專屬於WAIT NETWORK 核心，修補StikePractice插件不足, 添加自定義選單, ");
             sender.sendMessage("§c使用/waitcore help  §a獲取指令列表");
-            sender.sendMessage("§r                                                                                                            ");
             sender.sendMessage("§l───────§l[§dWAIT §bNETWORK§f§l]§l───────");
             return true;
         }
         if(args[0].equalsIgnoreCase("help")) {
             sender.sendMessage("§l───────§l[§dWAIT §bCore§f§l]§l───────");
-            sender.sendMessage("§r");
             sender.sendMessage("§d指令列表:");
             sender.sendMessage(" §b藍色-§f可以使用(沒有意外的話不會更動)");
             sender.sendMessage(" §4深紅色-§f可以使用，但是大機率不會有作用:P 列為下一次更新項目!");
