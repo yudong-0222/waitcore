@@ -17,14 +17,13 @@ public class gma implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] strings) {
         Player p = (Player) sender;
-        if (!sender.hasPermission("waitcore.gma")) {
+        if (!sender.hasPermission("waitcore.gm")) {
             p.sendMessage(ChatColor.RED + core.getConfig().getString("message.noperm"));
             return true;
         }
         if (cmd.getName().equalsIgnoreCase("gma")) {
             p.setGameMode(GameMode.ADVENTURE);
-            p.getGameMode().equals(GameMode.ADVENTURE);
-            p.sendMessage("§D冒險模式!");
+            p.sendMessage("§D冒險模式");
         }
         return true;
     }

@@ -1,10 +1,9 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="WaitCore">
-    <output-path>E:/wait 2/.a開這個/plugins</output-path>
+    <output-path>E:/wait2/..testSharkCore/plugins</output-path>
     <root id="archive" name="WaitCore.jar">
       <element id="module-output" name="w" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/recource/plugin.yml" />
     </root>
   </artifact>
 </component>

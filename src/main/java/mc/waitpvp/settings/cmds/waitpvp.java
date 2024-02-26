@@ -17,9 +17,8 @@ public class waitpvp implements CommandExecutor {
             sender.sendMessage("§l───────§l[§dWAIT §bNetwork§f§l]§l───────");
             sender.sendMessage("§eAuthor: YuDong");
             sender.sendMessage("§cVersion: " + core.getDescription().getVersion());
-            sender.sendMessage("§dLast Update: 31/5/23");
-            sender.sendMessage("§B描述: 專屬於WAIT NETWORK 核心，修補StikePractice插件不足, 添加自定義選單, ");
-            sender.sendMessage("§c使用/waitcore help  §a獲取指令列表");
+            sender.sendMessage("§dLast Update: 4/9/23");
+            sender.sendMessage("§f使用 /waitcore help  §a獲取指令列表");
             sender.sendMessage("§l───────§l[§dWAIT §bNETWORK§f§l]§l───────");
             return true;
         }
@@ -31,8 +30,9 @@ public class waitpvp implements CommandExecutor {
             sender.sendMessage("  §c/waitcore:gmc §b創造");
             sender.sendMessage("  §c/waitcore:gms §b生存");
             sender.sendMessage("  §c/waitcore:gma §b冒險");
-            sender.sendMessage("  §c/waitcore:eatgigi §bJust a meme eatgigi");
+            sender.sendMessage("  §c/waitcore:eatgigi §b宣告吃ㄐㄐ是什麼");
             sender.sendMessage("  §c/waitcore:howtoplay §b顯示如何遊玩");
+            sender.sendMessage("  §r");
             sender.sendMessage("  §c/waitcore:plugins §4目前還在開發 主要是用來替代原先spigot /plugin");
             sender.sendMessage("  §c/waitcore:report §4狗屎檢舉");
             sender.sendMessage("  §c/waitcore:resetname §4狗屎重製名字");
@@ -42,14 +42,13 @@ public class waitpvp implements CommandExecutor {
         if(args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("rl")) {
             if(sender.hasPermission("waitpvp.reload")){
                 //有權限 執行這
-                    core.reloadConfig();
-                    sender.sendMessage(core.DebugPrefix + "§a插件已經重啟完畢");
-                    sender.sendMessage(core.DebugPrefix + "§c不推薦使用/waitcore reload 可能導致部分資料受損。");
-                    return true;
+                core.reloadConfig();
+                sender.sendMessage(core.DebugPrefix + "§a插件已經重啟完畢");
+                sender.sendMessage(core.DebugPrefix + "§c不推薦使用/waitcore reload 可能導致部分資料受損。");
+                return true;
             }
-            //沒有權限。
-                sender.sendMessage(core.DebugPrefix + "§c" + core.getConfig().getString("message.noperm"));
-                    return true;
+            sender.sendMessage(core.DebugPrefix + "§cNOOOOOO haha");
+                return true;
         }
         return false;
         }

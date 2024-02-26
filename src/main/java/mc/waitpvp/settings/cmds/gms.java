@@ -1,7 +1,7 @@
 package mc.waitpvp.settings.cmds;
 
 import mc.waitpvp.settings.Core;
-import org.bukkit.ChatColor;
+
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,12 +20,10 @@ public class gms implements CommandExecutor {
             sender.sendMessage("NO you aren't PLAYER");
         }
         Player p = (Player) sender;
-        if (!p.hasPermission("waitcore.gms")) {
-            p.sendMessage(ChatColor.RED + core.getConfig().getString("message.noperm"));
+        if (!p.hasPermission("waitcore.gm")) {
             return true;
         }
             p.setGameMode(GameMode.SURVIVAL);
-            p.getGameMode().equals(GameMode.SURVIVAL);
             p.sendMessage("§b生存模式!!");
         return true;
     }

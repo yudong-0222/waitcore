@@ -1,4 +1,4 @@
-package mc.waitpvp.settings.color;
+package main.java.mc.waitpvp.settings.color;
 
 public class ConsoleColors {
     // Reset

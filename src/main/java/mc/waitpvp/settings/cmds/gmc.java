@@ -16,13 +16,12 @@ import org.bukkit.entity.Player;
      @Override
      public boolean onCommand(CommandSender sender, Command cmd, String s, String[] strings) {
          Player p = (Player) sender;
-         if (!sender.hasPermission("waitcore.gmc")) {
+         if (!sender.hasPermission("waitcore.gm")) {
              p.sendMessage(ChatColor.RED + core.getConfig().getString("message.noperm"));
              return true;
          }
          if (cmd.getName().equalsIgnoreCase("gmc")) {
              p.setGameMode(GameMode.CREATIVE);
-             p.getGameMode().equals(GameMode.CREATIVE);
              p.sendMessage("§a創造模式!");
          }
          return true;
